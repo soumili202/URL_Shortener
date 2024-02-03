@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 
 import React from 'react';
+import axios from 'axios';
 function App() {
   const [url, setUrl] = React.useState('');
   const [shortUrl, setShortUrl] = React.useState('');
@@ -8,7 +9,7 @@ function App() {
   const [customstring, setCustomstring] = React.useState('');
   const [customUrl, setCustomUrl] = React.useState('');
   const handleShortUrl =()=>{
-    
+
     setShortUrl('https://open.spotify.com/')
   }
   const handleCustomString=()=>{
