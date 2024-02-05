@@ -7,6 +7,10 @@ async function generateCustomUrl(req, res){
     if (!body.customstring){
         return res.status(400).json({message: 'Custom string is required'});
     }
+    const e= await url.findOne({shortUrl: body.customstring});
+    if (e){
+        return res.status(400).json({message: 'Custom string already exists'});
+    }
     await url.create(
         {shortUrl: body.customstring, 
         redirectUrl: body.url
