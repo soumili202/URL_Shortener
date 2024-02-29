@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-async function connect(){
+
+async function connect(url){
     try{
-        await mongoose.connect('mongodb+srv://soumilirupsa2020:Carmel_urls@urls.0vs44fd.mongodb.net/?retryWrites=true&w=majority');
+        await mongoose.connect(url);
         console.log('Connected to the database');
     }
     catch(err){

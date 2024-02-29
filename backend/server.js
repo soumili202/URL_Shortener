@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const mongoose = require('mongoose');
 const connect  = require('./connection');
 const Urls = require('./db_models/urls');
@@ -12,7 +13,7 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.send('Hello World!');
     });
-connect(); 
+connect(process.env.URL); 
 app.use ('/url', urlr); 
 app.use ('/urls', urla);
 //const entry = Urls.findOne({shortUrl: "abcd"},{redirectUrl:1});
