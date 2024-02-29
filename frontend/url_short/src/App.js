@@ -40,8 +40,20 @@ function App() {
       setCustomUrl(response.data.shortID);
       }
       catch (error){
+
         console.log('error', error);
+        if (error.response && error.response.data && error.response.data.message) {          
+          const errorMessage = error.response.data.message;       
+          console.log('Backend error:', errorMessage);
+          { setCustomUrl('') ;setUrl('');setShortUrl(''); setCustomneeded(false); setCustomstring('');}
+          alert(errorMessage);
       }
+         else{
+          
+            console.error('An unexpected error occurred:', error);
+        
+         }
+    }
       
          
       
@@ -83,7 +95,7 @@ function App() {
       {shortUrl && (
         <div className="form mt-10 ml-20 flex">
         <label className= "block mb-2 font-bold text-3xl">Short URL: 
-        <a href={`http://localhost:8000/${shortUrl}`} target="_blank" className="text-blue-500 ml-10">{shortUrl}</a>
+        <a href={`http://localhost:8000/${shortUrl}`} target="_blank" className="text-blue-500 ml-10">{`http://localhost:8000/${shortUrl}`}</a>
         </label>
         
         </div>)}
@@ -105,7 +117,7 @@ function App() {
       {customUrl && (
         <div className="form mt-10 ml-20 flex">
         <label className= "block mb-2 font-bold text-3xl">Custom URL: 
-        <a href={`http://localhost:8000/${customUrl}`} target="_blank" className="text-blue-500 ml-10 ">{customUrl}</a>
+        <a href={`http://localhost:8000/${customUrl}`} target="_blank" className="text-blue-500 ml-10 ">{`http://localhost:8000/${customUrl}`}</a>
         </label>
         </div>)}
         

@@ -22,6 +22,7 @@ app.get('/:shortID',async(req,res)=>{
     const entry = await Urls.findOne({shortUrl: shortID});
     //res.send(entry);
     
+    
     res.redirect(entry.redirectUrl);
         
 
