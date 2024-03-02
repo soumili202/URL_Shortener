@@ -65,8 +65,8 @@ function App() {
   }
   return (
     <div className="App">
-      <div className="Navbar w-full h-[10vh] bg-blue-500 flex justify-center items-center">
-      <h1 className="font-mono text-red-700 text-6xl">URL Shortener</h1>
+      <div className="Navbar w-full h-[10vh] bg-gray-500 flex justify-center items-center">
+      <h1 className="font-mono text-black text-6xl">shortenIT</h1>
       </div>
       <div className= "form mt-10 ml-20 flex">
         <label className= "block mb-2 font-bold text-3xl">Enter the URL: 
@@ -102,7 +102,7 @@ function App() {
       {customneeded && (
         <div className="form mt-10 ml-20 flex">
         <label className= "block mb-2 font-bold text-3xl">Enter the custom string: 
-        <input type="text" value={customstring} onChange={(e)=>setCustomstring(e.target.value)} className="w-1/2 p-2 rounded-md border border-gray-500"/> </label>
+        <input type="text" value={customstring} onChange={(e)=>setCustomstring(e.target.value)} className="w-1/2 p-2 rounded-md border border-gray-500 "/> </label>
         <button
         className="bg-blue-500 text-white text-4xl py-2 px-4 mb-4 rounded hover:bg-blue-700"
         onClick={()=>{handleCustomString(); setUrl('')}}
