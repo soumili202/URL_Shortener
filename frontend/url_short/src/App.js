@@ -11,11 +11,12 @@ function App() {
   const [customUrl, setCustomUrl] = React.useState('');
   
   
+  
 
   const handleShortUrl = async () =>{
     try{
       
-    const response = await axios.post('http://localhost:8000/urls', {url: url});
+    const response = await axios.post('https://shortit-mvkl.onrender.com/urls', {url: url});
     console.log('response', response);
     setShortUrl(response.data.shortID);
     }
@@ -35,7 +36,7 @@ function App() {
 
     try{
       
-      const response = await axios.post('http://localhost:8000/url', {url: url , customstring: customstring});
+      const response = await axios.post('https://shortit-mvkl.onrender.com/url', {url: url , customstring: customstring});
       console.log('response', response);
       setCustomUrl(response.data.shortID);
       }
@@ -95,7 +96,7 @@ function App() {
       {shortUrl && (
         <div className="form mt-10 ml-20 flex">
         <label className= "block mb-2 font-bold text-3xl">Short URL: 
-        <a href={`http://localhost:8000/${shortUrl}`} target="_blank" className="text-blue-500 ml-10">{`http://localhost:8000/${shortUrl}`}</a>
+        <a href={`https://shortit-mvkl.onrender.com/${shortUrl}`} target="_blank" className="text-blue-500 ml-10">{`https://shortit-mvkl.onrender.com/${shortUrl}`}</a>
         </label>
         
         </div>)}
@@ -117,7 +118,7 @@ function App() {
       {customUrl && (
         <div className="form mt-10 ml-20 flex">
         <label className= "block mb-2 font-bold text-3xl">Custom URL: 
-        <a href={`http://localhost:8000/${customUrl}`} target="_blank" className="text-blue-500 ml-10 ">{`http://localhost:8000/${customUrl}`}</a>
+        <a href={`https://shortit-mvkl.onrender.com/${customUrl}`} target="_blank" className="text-blue-500 ml-10 ">{`https://shortit-mvkl.onrender.com/${customUrl}`}</a>
         </label>
         </div>)}
         
